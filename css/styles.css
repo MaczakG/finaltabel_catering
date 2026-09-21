@@ -937,36 +937,6 @@ section {
 }
 
 /* =========================================================
-   Section accent block (white-bg sections, behind the media)
-   ========================================================= */
-.section-accent {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  max-width: var(--wrap-max);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  pointer-events: none;
-}
-
-.section-accent__block {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 64%;
-  right: 0;
-  display: block;
-  background: var(--pine-900);
-  border-radius: var(--radius);
-}
-
-@media (max-width: 899.98px) {
-  .section-accent {
-    display: none;
-  }
-}
-
-/* =========================================================
    About
    ========================================================= */
 .about {
