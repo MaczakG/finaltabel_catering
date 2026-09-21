@@ -856,6 +856,11 @@ section {
   color: var(--slate-500);
 }
 
+.spread__content .btn,
+.about__content .btn {
+  margin-top: 1.75rem;
+}
+
 .spread__media {
   border-radius: var(--radius);
   overflow: hidden;
