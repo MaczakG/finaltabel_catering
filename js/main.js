@@ -50,13 +50,14 @@
   }
 
   var header = document.querySelector(".site-header");
-  window.addEventListener(
-    "scroll",
-    function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 8);
-    },
-    { passive: true }
-  );
+  var heroEl = document.querySelector(".hero");
+  function updateHeaderState() {
+    var threshold = heroEl ? Math.max(heroEl.offsetHeight - 140, 80) : 80;
+    header.classList.toggle("is-scrolled", window.scrollY > threshold);
+  }
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+  window.addEventListener("resize", updateHeaderState);
+  updateHeaderState();
 
   function animateCount(el) {
     var raw = el.textContent;
