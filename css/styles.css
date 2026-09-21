@@ -239,7 +239,13 @@ section {
 #catering,
 #rolunk,
 #gyik,
-#kapcsolat {
+#kapcsolat,
+#event-organisation,
+#about,
+#faq,
+#contact,
+#organisation-evenements,
+#a-propos {
   scroll-margin-top: 5.5rem;
 }
 
@@ -318,6 +324,7 @@ section {
   justify-content: space-between;
   gap: var(--gutter);
   padding-block: 0.9rem;
+  max-width: 1320px;
 }
 
 .brand {
@@ -352,30 +359,37 @@ section {
   font-weight: 500;
 }
 
-.nav__list a {
+.nav__list a,
+.lang-switch a {
   text-decoration: none;
   padding-block: 0.25rem;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
 }
 
-@media (min-width: 900px) {
-  .nav__list a {
+@media (min-width: 1280px) {
+  .nav__list a,
+  .lang-switch a {
     color: var(--cream-50);
   }
 
   .nav__list a:hover,
-  .nav__list a:focus-visible {
+  .nav__list a:focus-visible,
+  .lang-switch a:hover,
+  .lang-switch a:focus-visible {
     color: var(--champagne-300);
     border-color: var(--champagne-300);
   }
 
-  .site-header.is-scrolled .nav__list a {
+  .site-header.is-scrolled .nav__list a,
+  .site-header.is-scrolled .lang-switch a {
     color: var(--pine-700);
   }
 
   .site-header.is-scrolled .nav__list a:hover,
-  .site-header.is-scrolled .nav__list a:focus-visible {
+  .site-header.is-scrolled .nav__list a:focus-visible,
+  .site-header.is-scrolled .lang-switch a:hover,
+  .site-header.is-scrolled .lang-switch a:focus-visible {
     color: var(--gold-700);
     border-color: var(--gold-500);
   }
@@ -383,6 +397,24 @@ section {
 
 .nav__cta {
   flex-shrink: 0;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lang-switch a.is-active {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+.lang-switch a:not(.is-active) {
+  opacity: 0.55;
 }
 
 .nav-toggle {
@@ -431,7 +463,7 @@ section {
   background: rgba(30, 50, 47, 0.35);
 }
 
-@media (max-width: 899.98px) {
+@media (max-width: 1279.98px) {
   .nav-toggle {
     display: flex;
   }
@@ -482,13 +514,24 @@ section {
     border-color: var(--gold-500);
   }
 
+  .lang-switch {
+    margin-top: 1.5rem;
+    color: var(--pine-700);
+  }
+
+  .lang-switch a:hover,
+  .lang-switch a:focus-visible {
+    color: var(--gold-700);
+    border-color: var(--gold-500);
+  }
+
   .nav__cta {
     margin-top: 1.5rem;
     width: 100%;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1280px) {
   .nav-toggle {
     display: none;
   }
@@ -1247,6 +1290,16 @@ section {
 
 .nav__list--footer a:hover,
 .nav__list--footer a:focus-visible {
+  color: var(--cream-50);
+  border-color: var(--gold-500);
+}
+
+.lang-switch--footer a {
+  color: var(--champagne-100);
+}
+
+.lang-switch--footer a:hover,
+.lang-switch--footer a:focus-visible {
   color: var(--cream-50);
   border-color: var(--gold-500);
 }
