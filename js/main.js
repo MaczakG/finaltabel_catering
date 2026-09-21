@@ -59,6 +59,15 @@
   window.addEventListener("resize", updateHeaderState);
   updateHeaderState();
 
+  var backToTop = document.querySelector(".back-to-top");
+  if (backToTop) {
+    function updateBackToTop() {
+      backToTop.classList.toggle("is-hidden", window.scrollY < 500);
+    }
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop();
+  }
+
   function animateCount(el) {
     var raw = el.textContent;
     var match = raw.match(/[0-9]+/);
