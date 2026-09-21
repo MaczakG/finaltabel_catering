@@ -1349,9 +1349,9 @@ section {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--pine-900);
-  color: var(--cream-50);
-  box-shadow: 0 10px 24px -10px rgba(20, 32, 30, 0.5);
+  background: var(--white);
+  color: var(--pine-900);
+  mix-blend-mode: difference;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background-color 0.2s var(--ease), color 0.2s var(--ease);
@@ -1361,6 +1361,8 @@ section {
 .back-to-top:focus-visible {
   background: var(--gold-500);
   color: var(--pine-900);
+  mix-blend-mode: normal;
+  box-shadow: 0 10px 24px -10px rgba(20, 32, 30, 0.5);
 }
 
 .back-to-top svg {
