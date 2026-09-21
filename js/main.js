@@ -113,4 +113,37 @@
       observer.observe(el);
     });
   }
+
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (parallaxEls.length && !reduceMotion) {
+    var parallaxTicking = false;
+
+    function updateParallax() {
+      var vh = window.innerHeight;
+      parallaxEls.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        var center = rect.top + rect.height / 2;
+        var progress = (vh / 2 - center) / vh;
+        var speed = parseFloat(el.getAttribute("data-parallax")) || 0;
+        var rotate = parseFloat(el.getAttribute("data-parallax-rotate")) || 0;
+        el.style.transform = "translateY(" + (progress * speed).toFixed(1) + "px) rotate(" + (progress * rotate).toFixed(1) + "deg)";
+      });
+      parallaxTicking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!parallaxTicking) {
+          window.requestAnimationFrame(updateParallax);
+          parallaxTicking = true;
+        }
+      },
+      { passive: true }
+    );
+    window.addEventListener("resize", updateParallax);
+    updateParallax();
+  }
 })();
