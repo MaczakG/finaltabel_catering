@@ -1222,6 +1222,38 @@ section {
 }
 
 /* =========================================================
+   Closing CTA
+   ========================================================= */
+.closing-cta {
+  position: relative;
+  text-align: center;
+}
+
+.closing-cta__inner {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.closing-cta__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--fs-h2);
+}
+
+.closing-cta__lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lead);
+  color: var(--slate-500);
+  margin-top: 1.25rem;
+}
+
+.closing-cta .btn {
+  margin-top: 2rem;
+}
+
+/* =========================================================
    Contact
    ========================================================= */
 .contact {
